@@ -12,8 +12,8 @@
  */
 public class Node 
 {
-    protected Node left;
-    protected Node right;
+    private Node left;
+    private Node right;
     int value;
     
     public Node(int value)
@@ -34,5 +34,13 @@ public class Node
         else
             return 0;
     }
+    public Node getLeft()
+    {
+    	return left;
+    }
+    public Node getRight()
+    {
+    	return right;
+    }
     
-}
+}//Node
