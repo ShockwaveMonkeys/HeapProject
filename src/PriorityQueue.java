@@ -30,7 +30,9 @@ public class PriorityQueue
     	String scriptFile = "/Users/kaya/Documents/LunaWorkspace/HeapProject/script.txt";
     	File inputfile = new File(fileName1);
     	String data;//store int values for heap
+    	//String[] splitedData;
 		String instructions;//store instructions from script.txts
+		String info1="";
     	try
     	{
     		FileInputStream fis = new FileInputStream(inputfile);
@@ -42,11 +44,12 @@ public class PriorityQueue
     		BufferedReader br2 = new BufferedReader(isr2);
     		
     		
-    		
-    		while((data = br.readLine() ) != null)
+    		while((data = br.readLine())!= null)
     		{
-    			System.out.println(data);
+    			info1 += data;
     		}
+    		//System.out.println(data);
+    		
     		while((instructions = br2.readLine()) != null)
     		{
     			System.out.println(instructions);
@@ -63,9 +66,17 @@ public class PriorityQueue
     	{
     		e.printStackTrace();
     	}
-    	
+    	String splitedData[] = info1.split(" ");
+    	Node root = myHeap.getRoot();
+		for(int i = 0; i < splitedData.length; i++)
+    	{
+    		Integer.parseInt(splitedData[i]);
+    		myHeap.insert(root, Integer.parseInt(splitedData[i]));
+    	}
+    	myHeap.printTree(root);
     
-        Node root = myHeap.getRoot();
+       // Node root = myHeap.getRoot();
+        
         /*
         myHeap.insert(root, 1);
         myHeap.insert(root, 6);
