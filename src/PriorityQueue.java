@@ -6,7 +6,8 @@
 
 
 
-//import java.io.BufferedReader;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -25,7 +26,47 @@ public class PriorityQueue
     */
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
+    	String fileName1 = "/Users/kaya/Documents/LunaWorkspace/HeapProject/input.txt";
+    	String scriptFile = "/Users/kaya/Documents/LunaWorkspace/HeapProject/script.txt";
+    	File inputfile = new File(fileName1);
+    	String data;//store int values for heap
+		String instructions;//store instructions from script.txts
+    	try
+    	{
+    		FileInputStream fis = new FileInputStream(inputfile);
+    		InputStreamReader isr = new InputStreamReader(fis);
+    		BufferedReader br = new BufferedReader(isr);
+    		
+    		FileInputStream fis2 = new FileInputStream(scriptFile);
+    		InputStreamReader isr2 = new InputStreamReader(fis2);
+    		BufferedReader br2 = new BufferedReader(isr2);
+    		
+    		
+    		
+    		while((data = br.readLine() ) != null)
+    		{
+    			System.out.println(data);
+    		}
+    		while((instructions = br2.readLine()) != null)
+    		{
+    			System.out.println(instructions);
+    		}
+    		
+    		
+    		br.close();
+    	}
+    	catch(IOException io)
+    	{
+    		io.printStackTrace();
+    	}
+    	catch(Exception e)
+    	{
+    		e.printStackTrace();
+    	}
+    	
+    
         Node root = myHeap.getRoot();
+        /*
         myHeap.insert(root, 1);
         myHeap.insert(root, 6);
         myHeap.insert(root, 8);
@@ -34,7 +75,7 @@ public class PriorityQueue
         myHeap.insert(root, 10);
         myHeap.insert(root, 9);
         myHeap.printTree(root);
-        
+        */
         
         
         //heap using the Heap class

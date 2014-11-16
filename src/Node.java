@@ -12,8 +12,8 @@
  */
 public class Node 
 {
-    private Node left;
-    private Node right;
+    protected Node left;
+    protected Node right;
     int value;
     
     public Node(int value)
@@ -42,5 +42,13 @@ public class Node
     {
     	return right;
     }
-    
+    public void setLeft(Node left)
+    {
+    	this.left = left;
+    }
+    public void setRight(Node right)
+    {
+    	this.right = right;
+    }
+     
 }//Node
