@@ -1,0 +1,3 @@
+deleteMin
+
+decreaseKey(2, 6)
