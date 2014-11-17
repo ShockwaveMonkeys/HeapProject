@@ -19,22 +19,45 @@ import java.util.Scanner;
  */
 public class PriorityQueue 
 {
-    static BTreeHeap  myHeap = new BTreeHeap(5);
+    static BTreeHeap  myHeap = new BTreeHeap(13);
     /**
     * @param args
     */
     public static void main(String[] args) throws FileNotFoundException, IOException 
     {
         Node root = myHeap.getRoot();
-        myHeap.insert(root, 1);
-        myHeap.insert(root, 6);
-        myHeap.insert(root, 8);
-        myHeap.insert(root, 4);
-        myHeap.insert(root, 3);
-        myHeap.insert(root, 10);
-        myHeap.insert(root, 9);
-        myHeap.printTree(root);
+        myHeap.insert(root, 15);
+        //myHeap.insert(root, 10);
+        //myHeap.insert(root, 8);
+        //myHeap.insert(root, 7);
+        //myHeap.insert(root, x);
         
+        myHeap.insert(10);
+        myHeap.insert(8);
+        myHeap.insert(7);
+        //myHeap.insert(6);
+        //myHeap.insert(5);
+        //myHeap.insert(4);
+        //myHeap.insert(x);
+        
+        //myHeap.printTree(root);
+        myHeap.printRoot(root);
+        //myHeap.printNodes();
+        
+        myHeap.setSmallestNum(13);
+        
+        myHeap.nodeCount(root);
+        myHeap.getNodeCount();
+        
+        myHeap.buildHeap(root);
+        //myHeap.buildHeap(root);
+        System.out.println("\n");
+        myHeap.printRoot(root);
+        
+        myHeap.deleteNode(root);
+        //myHeap.buildHeap(root);
+        System.out.println("\n");
+        myHeap.printRoot(root);
         
         
         //heap using the Heap class
