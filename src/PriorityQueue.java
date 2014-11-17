@@ -35,39 +35,10 @@ public class PriorityQueue
 		String instruction;//store instructions from script.txts
 		String info1="";
 		String info2 = "";
-    	try
-    	{
-    		FileInputStream fis = new FileInputStream(inputfile);
-    		InputStreamReader isr = new InputStreamReader(fis);
-    		BufferedReader br = new BufferedReader(isr);
-    		
-    		FileInputStream fis2 = new FileInputStream(scriptFile);
-    		InputStreamReader isr2 = new InputStreamReader(fis2);
-    		BufferedReader br2 = new BufferedReader(isr2);
-    		
-    		
-    		while((data = br.readLine())!= null)
-    		{
-    			info1 += data;
-    		}
-    		while((instruction = br2.readLine()) != null)
-    		{
-    			//System.out.println(instruction);
-    			info2 += instruction;
-    		}
-    		
+    	
     		
     		//Method callMethods = myHeap.getMethod();
-    		br.close();
-    	}
-    	catch(IOException io)
-    	{
-    		io.printStackTrace();
-    	}
-    	catch(Exception e)
-    	{
-    		e.printStackTrace();
-    	}
+    	
     	String splitedData[] = info1.split(" ");
     	Node root = myHeap.getRoot();
 		for(int i = 0; i < splitedData.length; i++)
