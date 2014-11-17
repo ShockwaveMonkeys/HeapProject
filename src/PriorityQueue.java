@@ -12,6 +12,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Method;
 import java.util.Scanner;
 
 /**
@@ -31,8 +32,9 @@ public class PriorityQueue
     	File inputfile = new File(fileName1);
     	String data;//store int values for heap
     	//String[] splitedData;
-		String instructions;//store instructions from script.txts
+		String instruction;//store instructions from script.txts
 		String info1="";
+		String info2 = "";
     	try
     	{
     		FileInputStream fis = new FileInputStream(inputfile);
@@ -48,14 +50,14 @@ public class PriorityQueue
     		{
     			info1 += data;
     		}
-    		//System.out.println(data);
-    		
-    		while((instructions = br2.readLine()) != null)
+    		while((instruction = br2.readLine()) != null)
     		{
-    			System.out.println(instructions);
+    			//System.out.println(instruction);
+    			info2 += instruction;
     		}
     		
     		
+    		//Method callMethods = myHeap.getMethod();
     		br.close();
     	}
     	catch(IOException io)
